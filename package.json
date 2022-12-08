@@ -1,6 +1,6 @@
 {
-  "name": "vscode-extension-template",
-  "displayName": "vscode-extension-template",
+  "name": "blog-article-publisher",
+  "displayName": "Blog Article Publisher",
   "description": "",
   "author": "He110",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "vscode": "^1.71.0"
   },
   "activationEvents": [
-    "onCommand:vscode-extension-template.helloWorld"
+    "onCommand:blog-article-publisher.helloWorld"
   ],
   "main": "./out/extension.js",
   "scripts": {
@@ -38,7 +38,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-extension-template.helloWorld",
+        "command": "blog-article-publisher.helloWorld",
         "title": "Hello World"
       }
     ]

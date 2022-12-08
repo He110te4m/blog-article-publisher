@@ -1,1 +1,1 @@
-# vscode-extension-template
+# blog-article-publisher
