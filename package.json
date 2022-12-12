@@ -12,7 +12,9 @@
     "vscode": "^1.71.0"
   },
   "activationEvents": [
-    "onCommand:blog-article-publisher.helloWorld"
+    "onCommand:blog-article-publisher.create",
+    "onCommand:blog-article-publisher.update",
+    "onCommand:blog-article-publisher.list"
   ],
   "main": "./out/extension.js",
   "scripts": {
@@ -22,6 +24,9 @@
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "got": "^12.5.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.1",
@@ -38,8 +43,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "blog-article-publisher.helloWorld",
-        "title": "Hello World"
+        "command": "blog-article-publisher.create",
+        "title": "[Article Publisher]: create"
+      },
+      {
+        "command": "blog-article-publisher.update",
+        "title": "[Article Publisher]: update"
+      },
+      {
+        "command": "blog-article-publisher.list",
+        "title": "[Article Publisher]: list"
       }
     ]
   }

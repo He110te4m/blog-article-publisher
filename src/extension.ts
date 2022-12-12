@@ -1,13 +1,10 @@
-import { type ExtensionContext, commands, window } from 'vscode'
+import { resolve } from 'path'
+import { type ExtensionContext } from 'vscode'
+import { register } from './helpers/plugin/register'
 
-export function activate(context: ExtensionContext) {
-  globalThis.console.log('Congratulations, your extension "blog-article-publisher" is now active!')
-
-  const disposable = commands.registerCommand('blog-article-publisher.helloWorld', () => {
-    window.showInformationMessage('Hello World from blog-article-publisher!')
-  })
-
-  context.subscriptions.push(disposable)
+export async function activate(context: ExtensionContext) {
+  const commandDisposables = await register(resolve(__dirname, 'commands'))
+  context.subscriptions.push(...commandDisposables)
 }
 
 // this method is called when your extension is deactivated
