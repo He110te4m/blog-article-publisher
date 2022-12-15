@@ -4,6 +4,7 @@ declare global {
     : T extends Promise<unknown>
       ? T | Awaited<T>
       : T | Promise<T>
+  export type Fn<TReturn = unknown, TArgs extends unknown[] = []> = (...args: TArgs) => TReturn
 }
 
 export {}
